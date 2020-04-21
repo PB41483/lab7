@@ -50,8 +50,8 @@
                     <td><span th:text="${#calendars.format(prod.dateOfEmployment,'dd.MM.yyyy')}"></span></td>
                     <td><span th:text="${prod.dateOfTermination}? ${#dates.format(prod.dateOfTermination, 'dd.MM.yyyy')} : 'wciąż pracuje'"></span></td>
                     <td><p th:each = "prod2, iterStat : ${prod.skills}">
-                            <span th:text="${prod2.name} + ' (' + ${prod2.level} + ')'"></span>
-                            <span th:text="${iterStat.last}? '' : ','"></span></p></td>
+                            <span th:text="${prod2.name} + ' (' + ${prod2.level} + ')' + (${iterStat.last}? '' : ',')"></span></p></td>
+                          
                     <td><p th:each="prod3 : ${prod.comments}">
                             <span th:text="${prod3}"></span></p></td>
                     <td><img th:src="${prod.photoUrl}" class="empPhoto" src="http://via.placeholder.com/250x250"/></td>
